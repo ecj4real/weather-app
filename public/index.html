@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Weather Application</title>
+        <link rel="manifest" href="/manifest.json">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="PWAGram">
+        <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
+        <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
+        <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-72x72.png" sizes="72x72">
+        <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-76x76.png" sizes="76x76">
+        <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-114x114.png" sizes="114x114">
+        <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-120x120.png" sizes="120x120">
+        <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-144x144.png" sizes="144x144">
+        <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-152x152.png" sizes="152x152">
+        <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-180x180.png" sizes="180x180">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
+        <link href="https://fonts.googleapis.com/css2?family=Kufam&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/src/css/app.css">
+        <meta name="msapplication-TileImage" content="/src/images/icons/apple-icon-144x144.png">
+        <meta name="msapplication-TileColor" content="#fff">
+        <meta name="theme-color" content="#3f51b5">
+    </head>
+    <body>
+        <div class="ui container">
+            <br/><br/>
+            <h1 class="text-center">Weather Application</h1>
+            <br/><br/>
+            <div>
+                <h3 id="date_time" class="text-center">Day/Time</h3>
+            </div>
+            <div>
+                <h3 id="location" class="text-center">Location</h3>
+            </div>
+            <br/>
+            <div class="text-center">
+                <img id="icon" class="text-center" width="100" alt="Weather Icon" src="#">
+                <h3 id="temperature" class="text-center">Temperature</h3>
+            </div>
+
+            <div>
+                <h3 id="weather" class="text-center">Weather</h3>
+            </div>
+            <br/><br/><br/>
+            <div style="position: relative;">
+                <div class="search-wrapper">
+                    <div class="input-holder">
+                        <input id="location_input" type="text" class="search-input" placeholder="Enter Location ..." />
+                        <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+                    </div>
+                    <span id="close_search" class="close" onclick="searchToggle(this, event);"></span>
+                </div>
+            </div> 
+        </div>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script> -->
+        <script type="text/javascript" src="/src/js/promise.js"></script>
+        <script type="text/javascript" src="/src/js/fetch.js"></script>
+        <script type="text/javascript" src="/src/js/app.js"></script>
+        <script type="text/javascript" src="/src/js/feed.js"></script>
+    </body>
+</html>
