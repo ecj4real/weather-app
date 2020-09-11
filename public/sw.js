@@ -38,7 +38,7 @@ self.addEventListener('activate', function(event){
 });
 
 self.addEventListener('fetch', function(event){
-    var url = "https://api.openweathermap.org/data/2.5/weather";
+    var url = "openweathermap.org";
     if(event.request.url.indexOf(url) > -1){
         event.respondWith(
             caches.open(CACHE_DYNAMIC_NAME)

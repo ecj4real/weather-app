@@ -18,7 +18,7 @@ function updateWeather(data){
 
   temperatureElement.textContent = (data.main.temp - 273.15).toFixed(1) + '°C';
 
-  iconElement.setAttribute("src", "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png")
+  iconElement.setAttribute("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png")
 
   weatherElement.textContent = data.weather[0].main + " / " + data.weather[0].description
 }
@@ -59,8 +59,11 @@ document.getElementById('location_input').onkeydown = function(e){
           })
           .then(function(data){
             console.log("From Cache", data);
-            if(!networkDataReceived){
-              updateWeather(data);
+            if(data !== undefined)
+            {
+              if(!networkDataReceived){
+                updateWeather(data);
+              }
             }
           });
       }
