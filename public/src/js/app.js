@@ -1,4 +1,4 @@
-var deferredPrompt;
+// var deferredPrompt;
 
 if('serviceWorker' in navigator){
     navigator.serviceWorker
@@ -11,9 +11,9 @@ if('serviceWorker' in navigator){
         });    
 }
 
-window.addEventListener('beforeinstallprompt', function(event){
-    console.log('beforeinstallprompt fired');
-    event.preventDefault();
-    deferredPrompt = event;
-    return false;
-});
+// window.addEventListener('beforeinstallprompt', function(event){
+//     console.log('beforeinstallprompt fired');
+//     event.preventDefault();
+//     deferredPrompt = event;
+//     return false;
+// });
