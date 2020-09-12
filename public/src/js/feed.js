@@ -55,25 +55,6 @@ document.getElementById('location_input').onkeydown = function(e){
           updateWeather(JSON.parse(localStorage.getItem(openWeatherUrl +'?q='+ location +'&appid=' + apiId)));
         }
       }
-      
-
-
-      // if('caches' in window){
-      //   caches.match(openWeatherUrl +'?q='+ location +'&appid=' + apiId)
-      //     .then(function(response){
-      //       if(response){
-      //         return response.json()
-      //       }
-      //     })
-      //     .then(function(data){
-      //       if(data !== undefined)
-      //       {
-      //         if(!networkDataReceived){
-      //           updateWeather(data);
-      //         }
-      //       }
-      //     });
-      // }
 
       document.getElementById('close_search').click();
     }
