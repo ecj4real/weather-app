@@ -31,7 +31,6 @@ function getWeather(location)
     })
     .then(function(data){
       networkDataReceived = true;
-      console.log("from network", data);
       updateWeather(data);
     })
     .catch(function(err){
@@ -58,7 +57,6 @@ document.getElementById('location_input').onkeydown = function(e){
             }
           })
           .then(function(data){
-            console.log("From Cache", data);
             if(data !== undefined)
             {
               if(!networkDataReceived){
