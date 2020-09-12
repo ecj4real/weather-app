@@ -1,4 +1,4 @@
-var CACHE_STATIC_NAME = 'static-v7';
+var CACHE_STATIC_NAME = 'static-v8';
 var CACHE_DYNAMIC_NAME = 'dynamic-v1';
 
 self.addEventListener('install', function(event){
@@ -32,8 +32,16 @@ self.addEventListener('activate', function(event){
 });
 
 self.addEventListener('fetch', function(event){
-    var url = "openweathermap.org";
-    if(event.request.url.indexOf(url) > -1){
+    var url = "openweathermap.org/img";
+    let openWeatherUrl = "https://api.openweathermap.org/data/2.5/weather";
+    if(event.request.url.indexOf(openWeatherUrl) > -1){
+        event.respondWith(fetch(event.request)
+            .then(function(res){
+                return res;
+            })   
+        );
+    }
+    else if(event.request.url.indexOf(url) > -1){
         event.respondWith(
             caches.open(CACHE_DYNAMIC_NAME)
                 .then(function(cache){

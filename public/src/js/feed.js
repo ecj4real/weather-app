@@ -31,6 +31,7 @@ function getWeather(location)
     })
     .then(function(data){
       networkDataReceived = true;
+      localStorage.setItem(openWeatherUrl +'?q='+ location +'&appid=' + apiId, JSON.stringify(data));
       updateWeather(data);
     })
     .catch(function(err){
@@ -49,22 +50,30 @@ document.getElementById('location_input').onkeydown = function(e){
 
       getWeather(location);
 
-      if('caches' in window){
-        caches.match(openWeatherUrl +'?q='+ location +'&appid=' + apiId)
-          .then(function(response){
-            if(response){
-              return response.json()
-            }
-          })
-          .then(function(data){
-            if(data !== undefined)
-            {
-              if(!networkDataReceived){
-                updateWeather(data);
-              }
-            }
-          });
+      if(localStorage.getItem(openWeatherUrl +'?q='+ location +'&appid=' + apiId)){
+        if(!networkDataReceived){
+          updateWeather(JSON.parse(localStorage.getItem(openWeatherUrl +'?q='+ location +'&appid=' + apiId)));
+        }
       }
+      
+
+
+      // if('caches' in window){
+      //   caches.match(openWeatherUrl +'?q='+ location +'&appid=' + apiId)
+      //     .then(function(response){
+      //       if(response){
+      //         return response.json()
+      //       }
+      //     })
+      //     .then(function(data){
+      //       if(data !== undefined)
+      //       {
+      //         if(!networkDataReceived){
+      //           updateWeather(data);
+      //         }
+      //       }
+      //     });
+      // }
 
       document.getElementById('close_search').click();
     }
