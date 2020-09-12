@@ -66,10 +66,7 @@ self.addEventListener('fetch', function(event){
                                     });
                             })
                             .catch(function(err){
-                                return caches.open(CACHE_STATIC_NAME)
-                                    .then(function(cache){
-                                        return cache.match('/offline.html');
-                                    });
+                                
                             });
                     }
                 })
