@@ -2,8 +2,9 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="Description" content="Weather Application testing knowledge of PWA">
         <title>Weather Application</title>
         <link rel="manifest" href="/manifest.json">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,7 +37,7 @@
         <div class="ui container">
             <br/><br/>
             <h1 class="text-center">Weather Application</h1>
-            <br/><br/>
+            
             <div>
                 <h3 id="date_time" class="text-center">Day/Time</h3>
             </div>
@@ -45,7 +46,7 @@
             </div>
             <br/>
             <div class="text-center">
-                <img id="icon" class="text-center" width="100" alt="Weather Icon" src="#">
+                <img id="icon" class="text-center" width="150" alt="Weather Icon" src="#">
                 <h3 id="temperature" class="text-center">Temperature</h3>
             </div>
 
@@ -57,7 +58,7 @@
                 <div class="search-wrapper">
                     <div class="input-holder">
                         <input id="location_input" type="text" class="search-input" placeholder="Enter Location ..." />
-                        <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+                        <button aria-label="search" class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
                     </div>
                     <span id="close_search" class="close" onclick="searchToggle(this, event);"></span>
                 </div>
