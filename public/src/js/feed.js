@@ -84,4 +84,12 @@ function searchToggle(obj, evt){
       // clear input
       container.querySelector('.search-input').value ='';
   }
+  else
+  {
+    let input = document.querySelector("#location_input");
+    let ev = document.createEvent('Event');
+    ev.initEvent('keydown');
+    ev.key = 'Enter';
+    input.dispatchEvent(ev);
+  }
 }
